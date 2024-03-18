@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import GlobalApi from '../Services/GlobalApi';
 
-function IntroPost() {
+function IntroPost({post}) {
   useEffect(()=>{
     getPost()
 }, [])
