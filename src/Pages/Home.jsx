@@ -45,7 +45,7 @@ function Home() {
             {/* IntroPost */}
             {post.length>0? <IntroPost post={post[0]}/>:null}
             {/* Blogs */}
-            <Blogs />
+            {post.length>0?<Blogs /> : null}
             {/* Footer */}
             <Footer />
         </div>
