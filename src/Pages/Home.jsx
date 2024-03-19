@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState} from 'react'
 import Header from '../Components/Header'
 import Search from '../Components/Search'
 import IntroPost from '../Components/IntroPost'
@@ -45,7 +45,7 @@ function Home() {
             {/* IntroPost */}
             {post.length>0? <IntroPost post={post[0]}/>:null}
             {/* Blogs */}
-            {post.length>0?<Blogs /> : null}
+            {post.length>0? <Blogs post={post}/>:null}
             {/* Footer */}
             <Footer />
         </div>
