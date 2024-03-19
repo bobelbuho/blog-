@@ -7,8 +7,8 @@ import Footer from '../Components/Footer'
 import GlobalApi from '../Services/GlobalApi'
 
 function Home() {
-    const [post,setPost]=useState([])
-    const [orgPost,setOrgPost]=useState([])
+    const [post,setPost]= useState([])
+    const [orgPost,setOrgPost]= useState([])
 
     useEffect(()=>{
         getPost();
