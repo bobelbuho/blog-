@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Components/Header'
 import Search from '../Components/Search'
 import IntroPost from '../Components/IntroPost'
@@ -7,8 +7,8 @@ import Footer from '../Components/Footer'
 import GlobalApi from '../Services/GlobalApi'
 
 function Home() {
-    const [post,setPost]= useState([])
-    const [orgPost,setOrgPost]= useState([])
+    const [post,setPost]=useState([])
+    const [orgPost,setOrgPost]=useState([])
 
     useEffect(()=>{
         getPost();
@@ -36,20 +36,18 @@ function Home() {
       const result=orgPost.filter(item=>item.tag==tag);
       setPost(result);
     }
-    return (
-        <div>
-            {/* Header */}
-            <Header />
-            {/* Search */}
-            <Search />
-            {/* IntroPost */}
-            {post.length>0? <IntroPost post={post[0]}/>:null}
-            {/* Blogs */}
-            {post.length>0? <Blogs post={post}/>:null}
-            {/* Footer */}
-            <Footer />
-        </div>
-    )
+  return (
+    <div >
+      <Header />
+       {/* Search */}
+        <Search selectedTag={(tag)=>filterPost(tag)} />
+        {/* IntroPost */}
+      {post.length>0? <IntroPost post={post[0]} />:null}
+        {/* Blogs */}
+      {post.length>0?  <Blogs posts={post}/>:null}
+      <Footer />
+    </div>
+  )
 }
 
 export default Home
