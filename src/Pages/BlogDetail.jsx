@@ -47,3 +47,4 @@ function BlogDetail() {
 }
 
 export default BlogDetail
+// fin
